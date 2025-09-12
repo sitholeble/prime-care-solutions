@@ -349,6 +349,62 @@ export class ServicesComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error loading services:', error);
+        // Fallback to static data if API fails
+        this.services = [
+          {
+            id: 1,
+            name: "Personal Care",
+            description: "Assistance with daily activities like bathing, dressing, and grooming",
+            icon: "fas fa-user-nurse",
+            features: [
+              "Bathing and hygiene assistance",
+              "Dressing and grooming help",
+              "Mobility assistance",
+              "Medication reminders"
+            ],
+            category: "personal"
+          },
+          {
+            id: 2,
+            name: "Companion Care",
+            description: "Social interaction and emotional support for your loved ones",
+            icon: "fas fa-heart",
+            features: [
+              "Conversation and companionship",
+              "Reading and entertainment",
+              "Accompanying to appointments",
+              "Meal preparation and planning"
+            ],
+            category: "companion"
+          },
+          {
+            id: 3,
+            name: "Home Health Care",
+            description: "Medical care provided in the comfort of your home",
+            icon: "fas fa-stethoscope",
+            features: [
+              "Skilled nursing care",
+              "Physical therapy",
+              "Occupational therapy",
+              "Medical equipment management"
+            ],
+            category: "medical"
+          },
+          {
+            id: 4,
+            name: "Respite Care",
+            description: "Temporary care to give family caregivers a break",
+            icon: "fas fa-clock",
+            features: [
+              "Short-term care relief",
+              "Emergency backup care",
+              "Holiday and vacation coverage",
+              "Flexible scheduling"
+            ],
+            category: "respite"
+          }
+        ];
+        this.filteredServices = this.services;
       }
     });
   }
