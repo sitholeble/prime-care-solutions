@@ -41,7 +41,7 @@ import { ApiService } from '../../services/api.service';
               <form action="https://formspree.io/f/xdkzllno" method="POST" class="contact-form">
                 <!-- Hidden field to identify the source -->
                 <input type="hidden" name="_subject" value="New Contact Form Submission - Prime Care Solutions">
-                <input type="hidden" name="_next" value="http://localhost:4200/contact?success=true">
+                <input type="hidden" name="_next" value="https://prime-care-solutions.vercel.app/contact?success=true">
                 <input type="hidden" name="_captcha" value="false">
                 
                 <div class="row">
