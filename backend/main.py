@@ -9,7 +9,11 @@ app = FastAPI(title="Prime Care Solutions API", version="1.0.0")
 # CORS middleware for Angular frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4200"],  # Angular dev server
+    allow_origins=[
+        "http://localhost:4200",  # Angular dev server
+        "https://prime-care-solutions.vercel.app",  # Deployed frontend
+        "https://prime-care-solutions.vercel.app/",  # Deployed frontend with trailing slash
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
