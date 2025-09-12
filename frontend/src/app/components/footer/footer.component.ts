@@ -73,7 +73,7 @@ import { RouterModule } from '@angular/router';
           <div class="row">
             <div class="col">
               <p class="copyright">
-                &copy; 2024 Prime Care Solutions. All rights reserved.
+                &copy; 2025 Prime Care Solutions. All rights reserved.
               </p>
             </div>
             <div class="col text-right">
