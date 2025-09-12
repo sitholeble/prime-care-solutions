@@ -353,55 +353,35 @@ export class ServicesComponent implements OnInit {
         this.services = [
           {
             id: 1,
-            name: "Personal Care",
-            description: "Assistance with daily activities like bathing, dressing, and grooming",
-            icon: "fas fa-user-nurse",
-            features: [
-              "Bathing and hygiene assistance",
-              "Dressing and grooming help",
-              "Mobility assistance",
-              "Medication reminders"
-            ],
-            category: "personal"
+            name: "Medication Administration",
+            description: "Professional administration of medications with proper documentation and monitoring",
+            icon: "medication",
+            features: [],
+            category: "medical"
           },
           {
             id: 2,
-            name: "Companion Care",
-            description: "Social interaction and emotional support for your loved ones",
-            icon: "fas fa-heart",
-            features: [
-              "Conversation and companionship",
-              "Reading and entertainment",
-              "Accompanying to appointments",
-              "Meal preparation and planning"
-            ],
-            category: "companion"
+            name: "Bed Bath & Personal Care",
+            description: "Compassionate assistance with bathing, grooming, and personal hygiene",
+            icon: "bath",
+            features: [],
+            category: "personal_care"
           },
           {
             id: 3,
-            name: "Home Health Care",
-            description: "Medical care provided in the comfort of your home",
-            icon: "fas fa-stethoscope",
-            features: [
-              "Skilled nursing care",
-              "Physical therapy",
-              "Occupational therapy",
-              "Medical equipment management"
-            ],
+            name: "Physical Therapy & Exercises",
+            description: "Customized exercise programs and physical therapy to maintain mobility",
+            icon: "fitness",
+            features: [],
             category: "medical"
           },
           {
             id: 4,
-            name: "Respite Care",
-            description: "Temporary care to give family caregivers a break",
-            icon: "fas fa-clock",
-            features: [
-              "Short-term care relief",
-              "Emergency backup care",
-              "Holiday and vacation coverage",
-              "Flexible scheduling"
-            ],
-            category: "respite"
+            name: "Grocery Shopping & Errands",
+            description: "Assistance with shopping, errands, and transportation needs",
+            icon: "shopping",
+            features: [],
+            category: "daily_living"
           }
         ];
         this.filteredServices = this.services;
@@ -430,14 +410,16 @@ export class ServicesComponent implements OnInit {
     return iconMap[iconName] || 'fas fa-heart';
   }
 
-  getCategoryName(category: string): string {
+  getCategoryName(category: string | undefined): string {
+    if (!category) return 'General';
+    
     const categoryMap: { [key: string]: string } = {
       'medical': 'Medical',
       'personal_care': 'Personal Care',
       'daily_living': 'Daily Living',
       'emotional': 'Emotional'
     };
-    return categoryMap[category] || category;
+    return categoryMap[category] || 'General';
   }
 
   getServiceFeatures(serviceName: string): string[] {

@@ -365,29 +365,19 @@ export class HomeComponent implements OnInit {
         this.services = [
           {
             id: 1,
-            name: "Personal Care",
-            description: "Assistance with daily activities like bathing, dressing, and grooming",
-            icon: "fas fa-user-nurse",
-            features: [
-              "Bathing and hygiene assistance",
-              "Dressing and grooming help",
-              "Mobility assistance",
-              "Medication reminders"
-            ],
-            category: "personal"
+            name: "Medication Administration",
+            description: "Professional administration of medications with proper documentation and monitoring",
+            icon: "medication",
+            features: [],
+            category: "medical"
           },
           {
             id: 2,
-            name: "Companion Care",
-            description: "Social interaction and emotional support for your loved ones",
-            icon: "fas fa-heart",
-            features: [
-              "Conversation and companionship",
-              "Reading and entertainment",
-              "Accompanying to appointments",
-              "Meal preparation and planning"
-            ],
-            category: "companion"
+            name: "Bed Bath & Personal Care",
+            description: "Compassionate assistance with bathing, grooming, and personal hygiene",
+            icon: "bath",
+            features: [],
+            category: "personal_care"
           }
         ];
       }

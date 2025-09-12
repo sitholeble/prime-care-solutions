@@ -3,7 +3,8 @@ export interface Service {
   name: string;
   description: string;
   icon: string;
-  category: string;
+  features: string[];
+  category?: string;
 }
 
 export interface TeamMember {
