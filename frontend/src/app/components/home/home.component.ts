@@ -133,9 +133,6 @@ import { Service } from '../../models/service.model';
             <a routerLink="/contact" class="btn" style="background: white; color: #2c5aa0;">
               <i class="fas fa-phone"></i> Contact Us
             </a>
-            <a href="tel:+27810029293" class="btn btn-outline" style="border-color: white; color: white;">
-              <i class="fas fa-phone-alt"></i> Call Now
-            </a>
             <a href="https://wa.me/27810029293" class="btn btn-outline" style="border-color: #25D366; color: #25D366;" target="_blank">
               <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
