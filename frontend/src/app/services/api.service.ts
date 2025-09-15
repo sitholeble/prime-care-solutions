@@ -7,7 +7,7 @@ import { Service, TeamMember, ContactRequest, AboutInfo } from '../models/servic
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'https://prime-care-solutions-be.vercel.app';
+  private baseUrl = 'http://localhost:8000';
 
   constructor(private http: HttpClient) { }
 

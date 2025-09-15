@@ -139,9 +139,6 @@ import { Service } from '../../models/service.model';
             <a href="https://wa.me/27810029293" class="btn btn-outline" style="border-color: #25D366; color: #25D366;" target="_blank">
               <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
-            <a href="https://meet.google.com/new" class="btn btn-outline" style="border-color: white; color: white;" target="_blank">
-              <i class="fab fa-google"></i> Video Call
-            </a>
           </div>
         </div>
       </div>

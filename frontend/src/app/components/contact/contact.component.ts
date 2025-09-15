@@ -149,17 +149,7 @@ import { ApiService } from '../../services/api.service';
                       <a href="https://wa.me/27810029293" class="whatsapp-link" target="_blank">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                       </a>
-                      <a href="facetime:+27810029293" class="call-option apple-only">
-                        <i class="fab fa-apple"></i> FaceTime
-                      </a>
-                      <a href="https://meet.google.com/new" class="call-option" target="_blank">
-                        <i class="fab fa-google"></i> Google Meet
-                      </a>
-                      <a href="https://zoom.us/j/your-meeting-id" class="call-option" target="_blank">
-                        <i class="fas fa-video"></i> Zoom
-                      </a>
                     </div>
-                    <small>24/7 Emergency Line</small>
                   </div>
                 </div>
                 
@@ -407,15 +397,6 @@ import { ApiService } from '../../services/api.service';
       flex-wrap: wrap;
     }
 
-    .apple-only {
-      display: none;
-    }
-
-    @media screen and (-webkit-min-device-pixel-ratio: 0) {
-      .apple-only {
-        display: inline-flex;
-      }
-    }
 
     .call-option {
       color: #2c5aa0 !important;

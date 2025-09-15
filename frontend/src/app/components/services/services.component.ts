@@ -102,14 +102,8 @@ import { Service } from '../../models/service.model';
             <a routerLink="/contact" class="btn" style="background: white; color: #2c5aa0;">
               <i class="fas fa-phone"></i> Get Free Consultation
             </a>
-            <a href="tel:+27810029293" class="btn btn-outline" style="border-color: white; color: white;">
-              <i class="fas fa-phone-alt"></i> Call Now
-            </a>
             <a href="https://wa.me/27810029293" class="btn btn-outline" style="border-color: #25D366; color: #25D366;" target="_blank">
               <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <a href="https://meet.google.com/new" class="btn btn-outline" style="border-color: white; color: white;" target="_blank">
-              <i class="fab fa-google"></i> Video Call
             </a>
           </div>
         </div>
@@ -331,7 +325,7 @@ export class ServicesComponent implements OnInit {
     { key: 'all', name: 'All Services', icon: 'fas fa-th-large' },
     { key: 'medical', name: 'Medical Care', icon: 'fas fa-user-md' },
     { key: 'personal_care', name: 'Personal Care', icon: 'fas fa-shower' },
-    { key: 'daily_living', name: 'Daily Living', icon: 'fas fa-home' },
+    { key: 'education', name: 'Education & Training', icon: 'fas fa-graduation-cap' },
     { key: 'emotional', name: 'Emotional Support', icon: 'fas fa-heart' }
   ];
 
@@ -353,35 +347,83 @@ export class ServicesComponent implements OnInit {
         this.services = [
           {
             id: 1,
-            name: "Medication Administration",
-            description: "Professional administration of medications with proper documentation and monitoring",
-            icon: "medication",
+            name: "Home Care Management",
+            description: "Traveling to patients' homes and managing their care plans according to physicians' instructions.",
+            icon: "home-care",
             features: [],
             category: "medical"
           },
           {
             id: 2,
-            name: "Bed Bath & Personal Care",
-            description: "Compassionate assistance with bathing, grooming, and personal hygiene",
-            icon: "bath",
-            features: [],
-            category: "personal_care"
-          },
-          {
-            id: 3,
-            name: "Physical Therapy & Exercises",
-            description: "Customized exercise programs and physical therapy to maintain mobility",
-            icon: "fitness",
+            name: "Medication & Testing Services",
+            description: "Administering medication and insulin, and completing blood pressure, glucose, urine, and stool tests.",
+            icon: "medication",
             features: [],
             category: "medical"
           },
           {
-            id: 4,
-            name: "Grocery Shopping & Errands",
-            description: "Assistance with shopping, errands, and transportation needs",
-            icon: "shopping",
+            id: 3,
+            name: "Wound Care & Personal Hygiene",
+            description: "Inspecting wounds, changing dressings, and handling personal grooming and hygiene.",
+            icon: "wound-care",
             features: [],
-            category: "daily_living"
+            category: "personal_care"
+          },
+          {
+            id: 4,
+            name: "Health Assessment & Monitoring",
+            description: "Testing for muscle weakness, bedsores, and any signs of infection.",
+            icon: "assessment",
+            features: [],
+            category: "medical"
+          },
+          {
+            id: 5,
+            name: "Family Support & Communication",
+            description: "Listening to the concerns of family members and answering their questions.",
+            icon: "family-support",
+            features: [],
+            category: "emotional"
+          },
+          {
+            id: 6,
+            name: "Caregiver Education",
+            description: "Educating caregivers and family on the aftercare or ongoing care of the patient.",
+            icon: "education",
+            features: [],
+            category: "education"
+          },
+          {
+            id: 7,
+            name: "Healthcare Consultation",
+            description: "Providing suggestions for improved healthcare to physicians and family members of the patient.",
+            icon: "consultation",
+            features: [],
+            category: "medical"
+          },
+          {
+            id: 8,
+            name: "Recovery Monitoring & Reporting",
+            description: "Monitoring patient recovery and compiling reports for the physician.",
+            icon: "monitoring",
+            features: [],
+            category: "medical"
+          },
+          {
+            id: 9,
+            name: "Professional Development",
+            description: "Keeping abreast of developments in healthcare and attending workshops and lectures as required.",
+            icon: "professional-dev",
+            features: [],
+            category: "education"
+          },
+          {
+            id: 10,
+            name: "Collaborative Care Planning",
+            description: "Collaborating with doctors and other healthcare professionals to develop improved diets and healthcare plans for patients.",
+            icon: "collaboration",
+            features: [],
+            category: "medical"
           }
         ];
         this.filteredServices = this.services;
@@ -400,12 +442,16 @@ export class ServicesComponent implements OnInit {
 
   getServiceIcon(iconName: string): string {
     const iconMap: { [key: string]: string } = {
+      'home-care': 'fas fa-home',
       'medication': 'fas fa-pills',
-      'bath': 'fas fa-shower',
-      'fitness': 'fas fa-dumbbell',
-      'shopping': 'fas fa-shopping-cart',
-      'meal': 'fas fa-utensils',
-      'support': 'fas fa-hands-helping'
+      'wound-care': 'fas fa-band-aid',
+      'assessment': 'fas fa-stethoscope',
+      'family-support': 'fas fa-users',
+      'education': 'fas fa-graduation-cap',
+      'consultation': 'fas fa-comments',
+      'monitoring': 'fas fa-chart-line',
+      'professional-dev': 'fas fa-book-open',
+      'collaboration': 'fas fa-handshake'
     };
     return iconMap[iconName] || 'fas fa-heart';
   }
@@ -416,7 +462,7 @@ export class ServicesComponent implements OnInit {
     const categoryMap: { [key: string]: string } = {
       'medical': 'Medical',
       'personal_care': 'Personal Care',
-      'daily_living': 'Daily Living',
+      'education': 'Education & Training',
       'emotional': 'Emotional'
     };
     return categoryMap[category] || 'General';
@@ -424,41 +470,65 @@ export class ServicesComponent implements OnInit {
 
   getServiceFeatures(serviceName: string): string[] {
     const featuresMap: { [key: string]: string[] } = {
-      'Medication Administration': [
-        'Professional administration',
-        'Medication monitoring',
-        'Documentation tracking',
-        'Family communication'
+      'Home Care Management': [
+        'Physician-directed care plans',
+        'Home visits and assessments',
+        'Care coordination',
+        'Treatment plan management'
       ],
-      'Bed Bath & Personal Care': [
-        'Gentle bathing assistance',
-        'Grooming and hygiene',
-        'Dressing assistance',
-        'Skin care monitoring'
+      'Medication & Testing Services': [
+        'Medication administration',
+        'Insulin management',
+        'Blood pressure monitoring',
+        'Glucose and lab testing'
       ],
-      'Physical Therapy & Exercises': [
-        'Customized exercise plans',
-        'Mobility assistance',
-        'Fall prevention',
-        'Strength building'
+      'Wound Care & Personal Hygiene': [
+        'Wound inspection and care',
+        'Dressing changes',
+        'Personal grooming assistance',
+        'Hygiene maintenance'
       ],
-      'Grocery Shopping & Errands': [
-        'Grocery shopping',
-        'Prescription pickup',
-        'Appointment transportation',
-        'General errands'
+      'Health Assessment & Monitoring': [
+        'Muscle weakness testing',
+        'Bedsore prevention',
+        'Infection screening',
+        'Vital signs monitoring'
       ],
-      'Meal Preparation & Feeding': [
-        'Nutritious meal planning',
-        'Dietary restrictions',
-        'Feeding assistance',
-        'Hydration monitoring'
+      'Family Support & Communication': [
+        'Family consultation',
+        'Question and answer sessions',
+        'Care updates',
+        'Emotional support'
       ],
-      'Emotional Support & Companionship': [
-        'Companionship',
-        'Mental health support',
-        'Social interaction',
-        'Family communication'
+      'Caregiver Education': [
+        'Aftercare training',
+        'Ongoing care education',
+        'Family instruction',
+        'Best practices guidance'
+      ],
+      'Healthcare Consultation': [
+        'Treatment recommendations',
+        'Physician collaboration',
+        'Family healthcare advice',
+        'Care improvement suggestions'
+      ],
+      'Recovery Monitoring & Reporting': [
+        'Progress tracking',
+        'Physician reports',
+        'Recovery documentation',
+        'Outcome monitoring'
+      ],
+      'Professional Development': [
+        'Healthcare workshops',
+        'Continuing education',
+        'Industry updates',
+        'Skill enhancement'
+      ],
+      'Collaborative Care Planning': [
+        'Multi-disciplinary planning',
+        'Diet optimization',
+        'Healthcare plan development',
+        'Professional collaboration'
       ]
     };
     return featuresMap[serviceName] || [];

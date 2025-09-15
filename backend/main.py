@@ -45,45 +45,73 @@ class TeamMember(BaseModel):
 services = [
     Service(
         id=1,
-        name="Medication Administration",
-        description="Professional administration of medications with proper documentation and monitoring",
-        icon="medication",
+        name="Home Care Management",
+        description="Traveling to patients' homes and managing care plans",
+        icon="home-care",
         category="medical"
     ),
     Service(
         id=2,
-        name="Bed Bath & Personal Care",
-        description="Compassionate assistance with bathing, grooming, and personal hygiene",
-        icon="bath",
-        category="personal_care"
-    ),
-    Service(
-        id=3,
-        name="Physical Therapy & Exercises",
-        description="Customized exercise programs and physical therapy to maintain mobility",
-        icon="fitness",
+        name="Medication & Testing Services",
+        description="Administering medication and conducting tests",
+        icon="medication",
         category="medical"
     ),
     Service(
+        id=3,
+        name="Wound Care & Personal Hygiene",
+        description="Wound inspection and personal grooming",
+        icon="wound-care",
+        category="personal_care"
+    ),
+    Service(
         id=4,
-        name="Grocery Shopping & Errands",
-        description="Assistance with shopping, errands, and transportation needs",
-        icon="shopping",
-        category="daily_living"
+        name="Health Assessment & Monitoring",
+        description="Testing for muscle weakness, bedsores, infections",
+        icon="assessment",
+        category="medical"
     ),
     Service(
         id=5,
-        name="Meal Preparation & Feeding",
-        description="Nutritious meal planning, preparation, and feeding assistance",
-        icon="meal",
-        category="daily_living"
+        name="Family Support & Communication",
+        description="Listening to family concerns and answering questions",
+        icon="family-support",
+        category="emotional"
     ),
     Service(
         id=6,
-        name="Emotional Support & Companionship",
-        description="Compassionate companionship and emotional support for mental well-being",
-        icon="support",
-        category="emotional"
+        name="Caregiver Education",
+        description="Educating caregivers and family on patient care",
+        icon="education",
+        category="education"
+    ),
+    Service(
+        id=7,
+        name="Healthcare Consultation",
+        description="Providing healthcare suggestions to physicians and families",
+        icon="consultation",
+        category="medical"
+    ),
+    Service(
+        id=8,
+        name="Recovery Monitoring & Reporting",
+        description="Monitoring patient recovery and compiling reports",
+        icon="monitoring",
+        category="medical"
+    ),
+    Service(
+        id=9,
+        name="Professional Development",
+        description="Keeping up with healthcare developments and training",
+        icon="professional-dev",
+        category="education"
+    ),
+    Service(
+        id=10,
+        name="Collaborative Care Planning",
+        description="Working with doctors to develop improved care plans",
+        icon="collaboration",
+        category="medical"
     )
 ]
 
